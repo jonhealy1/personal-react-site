@@ -4,6 +4,7 @@ import { faGithub, faOpenid } from "@fortawesome/free-brands-svg-icons";
 
 import hhlogo from "../assets/healy-hyper-smalllogo.png";
 import stacchainLogo from "../assets/stacchain-smalllogo.jpg";
+import { faBoltLightning } from "@fortawesome/free-solid-svg-icons";
 
 const Bio = () => {
   return (
@@ -91,10 +92,10 @@ const Bio = () => {
             className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg shadow hover:shadow-md hover:bg-blue-100 transition"
           >
             <FontAwesomeIcon
-              icon={faOpenid}
+              icon={faBoltLightning}
               className="text-gray-800 text-xl"
             />
-            <span className="text-gray-800 font-semibold">Stacchain</span>
+            <span className="text-gray-800 font-semibold">stacchain</span>
           </a>
         </div>
       </div>

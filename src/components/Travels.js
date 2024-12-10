@@ -82,7 +82,7 @@ const Travels = () => {
 
   return (
     <div className="w-full px-8 py-12 bg-gradient-to-b from-gray-200 via-white to-gray-100">
-      <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+      <h2 className="text-3xl font-extrabold text-center mb-12 text-gray-800">
         Travel Photos
       </h2>
       <Swiper
