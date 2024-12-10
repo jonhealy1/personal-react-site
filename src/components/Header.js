@@ -25,7 +25,7 @@ const Header = () => {
         </p>
 
         {/* Icon Box */}
-        <div className="mt-4 bg-gray-900/70 rounded-full px-6 py-3 flex items-center gap-8">
+        <div className="mt-4 bg-gray-900/70 rounded-full px-6 py-3 flex items-center gap-12">
           <a
             href="https://bsky.app/profile/jonhealy1.github.io"
             target="_blank"

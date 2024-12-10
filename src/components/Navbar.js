@@ -18,7 +18,7 @@ const Navbar = () => {
       }}
     >
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-4 text-gray-600">
           {/* Logo */}
           <div className="sm:text-xl font-bold">
             <a href="#bio">Welcome to my website</a>

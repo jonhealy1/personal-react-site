@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faOpenid } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import hhlogo from "../assets/healy-hyper-smalllogo.png";
 import stacchainLogo from "../assets/stacchain-smalllogo.jpg";
