@@ -1,5 +1,7 @@
 import React from "react";
 import image from "../assets/athens-city-sea.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBluesky, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Header = () => {
   return (
@@ -13,12 +15,33 @@ const Header = () => {
 
       {/* Overlay Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
+        {/* Title */}
         <h1 className="text-5xl font-extrabold drop-shadow-lg">
           Jonathan Healy
         </h1>
         <p className="text-xl mt-2 drop-shadow-md">
           Geospatial | Blockchain | Developer
         </p>
+
+        {/* Icon Box */}
+        <div className="mt-4 bg-white/70 rounded-full px-6 py-3 flex items-center gap-4">
+          <a
+            href="https://bsky.app/profile/jonhealy1.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-700 transition"
+          >
+            <FontAwesomeIcon icon={faBluesky} className="w-6 h-6" />
+          </a>
+          <a
+            href="https://github.com/jonhealy1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-800 hover:text-gray-600 transition"
+          >
+            <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+          </a>
+        </div>
       </div>
 
       {/* Decorative Bottom Curve */}
