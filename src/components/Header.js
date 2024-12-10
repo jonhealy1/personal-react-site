@@ -2,6 +2,7 @@ import React from "react";
 import image from "../assets/athens-city-sea.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBluesky, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 
 const Header = () => {
   return (
@@ -24,12 +25,12 @@ const Header = () => {
         </p>
 
         {/* Icon Box */}
-        <div className="mt-4 bg-white/70 rounded-full px-6 py-3 flex items-center gap-4">
+        <div className="mt-4 bg-gray-900/70 rounded-full px-6 py-3 flex items-center gap-8">
           <a
             href="https://bsky.app/profile/jonhealy1.github.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700 transition"
+            className="text-gray-100 hover:text-gray-600 transition"
           >
             <FontAwesomeIcon icon={faBluesky} className="w-6 h-6" />
           </a>
@@ -37,9 +38,17 @@ const Header = () => {
             href="https://github.com/jonhealy1"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-800 hover:text-gray-600 transition"
+            className="text-gray-100 hover:text-gray-600 transition"
           >
             <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jonathan-d-healy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-100 hover:text-gray-600 transition"
+          >
+            <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
           </a>
         </div>
       </div>
