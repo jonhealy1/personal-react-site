@@ -14,12 +14,12 @@ const Header = () => {
         className="absolute inset-0 w-full h-full object-cover opacity-70"
       />
       {/* Overlay Content */}
-      <div className="hover:scale-105 transition-transform relative z-10 drop-shadow-[0_0_33px_rgba(255,255,255,0.7)] flex flex-col items-center justify-center h-full text-gray-100 font-lexend">
+      <div className="hover:scale-105 transition-transform relative z-10 drop-shadow-[0_0_33px_rgba(255,255,255,0.7)] flex flex-col items-center justify-center h-full text-gray-100">
         {/* Title */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold drop-shadow-2xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-lexend drop-shadow-2xl">
           Jonathan Healy
         </h1>
-        <p className="text-sm sm:text-md md:text-xl mt-2 drop-shadow-md">
+        <p className="text-sm sm:text-md md:text-xl font-lexend mt-2 drop-shadow-md">
           Geospatial | Blockchain | Developer
         </p>
         <br />
