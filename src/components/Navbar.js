@@ -20,13 +20,13 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center py-4 text-gray-800">
           {/* Logo */}
-          <div className="sm:text-xl font-bold">
+          <div className="sm:text-xl font-bold font-lexend">
             <a href="#bio">Welcome to my website </a>
             <FontAwesomeIcon icon={faHeart} />
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex space-x-6 font-lexend">
             <a
               href="#bio"
               className="hover:text-gray-600 transition duration-200 border-b-2 border-transparent hover:border-gray-800"

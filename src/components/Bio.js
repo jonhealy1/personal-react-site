@@ -11,7 +11,7 @@ const Bio = () => {
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Left Column: Bio */}
       <div className="col-span-2">
-        <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
+        <h2 className="font-lexend text-2xl sm:text-3xl font-extrabold text-gray-800 mb-4">
           Hello. Nice to meet you!
         </h2>
         <p className="text-gray-700 text-lg leading-relaxed mb-4">
