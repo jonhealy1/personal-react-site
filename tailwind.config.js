@@ -4,7 +4,11 @@ module.exports = {
     "./index.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        rubik: ["'Rubik Mono One'", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

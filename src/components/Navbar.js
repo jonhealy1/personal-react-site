@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faHeart, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,10 +18,11 @@ const Navbar = () => {
       }}
     >
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center py-4 text-gray-600">
+        <div className="flex justify-between items-center py-4 text-gray-800">
           {/* Logo */}
           <div className="sm:text-xl font-bold">
-            <a href="#bio">Welcome to my website</a>
+            <a href="#bio">Welcome to my website </a>
+            <FontAwesomeIcon icon={faHeart} />
           </div>
 
           {/* Desktop Links */}
