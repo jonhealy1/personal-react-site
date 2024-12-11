@@ -19,8 +19,11 @@ const Header = () => {
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-lexend font-extrabold drop-shadow-2xl">
           Jonathan Healy
         </h1>
-        <p className="text-sm sm:text-md md:text-xl font-lexend mt-2 drop-shadow-md">
+        {/* <p className="text-sm sm:text-md md:text-xl font-lexend mt-2 drop-shadow-md">
           Geospatial | Blockchain | Developer
+        </p> */}
+        <p className="text-sm sm:text-md md:text-xl font-lexend mt-2 drop-shadow-md">
+          stacchain | Healy Hyperspatial
         </p>
         <br />
         {/* Icon Box */}
