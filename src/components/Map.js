@@ -19,6 +19,17 @@ const locations = [
   { name: "Toronto, Canada", coords: [-79.3832, 43.6532] },
   { name: "Vancouver, Canada", coords: [-123.1216, 49.2827] },
   { name: "Victoria, Canada", coords: [-123.3656, 48.4284] },
+  // Add Kalkan as per your request
+  { name: "Kalkan, Turkey", coords: [29.4183, 36.2641] },
+];
+
+// Places you lived (green)
+const livedPlaces = [
+  "Saskatoon, Canada",
+  "Victoria, Canada",
+  "Macau, China",
+  "Ankara, Turkey",
+  "Kalkan, Turkey",
 ];
 
 const MapLibreComponent = () => {
@@ -53,10 +64,16 @@ const MapLibreComponent = () => {
       markerEl.className = "custom-marker";
       markerEl.style.width = "14px";
       markerEl.style.height = "14px";
-      markerEl.style.backgroundColor = "#007BFF";
       markerEl.style.borderRadius = "50%";
       markerEl.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
       markerEl.style.cursor = "pointer";
+
+      // Determine marker color: green for lived places, blue for visited
+      if (livedPlaces.includes(location.name)) {
+        markerEl.style.backgroundColor = "#00AA00"; // green
+      } else {
+        markerEl.style.backgroundColor = "#007BFF"; // blue
+      }
 
       new maplibregl.Marker({ element: markerEl })
         .setLngLat(location.coords)
@@ -88,6 +105,24 @@ const MapLibreComponent = () => {
           minHeight: "300px", // Minimum height for very narrow screens
         }}
       ></div>
+
+      {/* Legend Section */}
+      <div className="mt-4 flex justify-center space-x-8 text-gray-700 font-lexend">
+        <div className="flex items-center space-x-2">
+          <span
+            className="inline-block w-4 h-4 rounded-full"
+            style={{ backgroundColor: "#00AA00" }}
+          ></span>
+          <span>Places I Lived</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <span
+            className="inline-block w-4 h-4 rounded-full"
+            style={{ backgroundColor: "#007BFF" }}
+          ></span>
+          <span>Places I Visited</span>
+        </div>
+      </div>
     </section>
   );
 };
