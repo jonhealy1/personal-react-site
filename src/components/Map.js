@@ -19,7 +19,6 @@ const locations = [
   { name: "Toronto, Canada", coords: [-79.3832, 43.6532] },
   { name: "Vancouver, Canada", coords: [-123.1216, 49.2827] },
   { name: "Victoria, Canada", coords: [-123.3656, 48.4284] },
-  // Add Kalkan as per your request
   { name: "Kalkan, Turkey", coords: [29.4183, 36.2641] },
 ];
 
@@ -27,6 +26,7 @@ const locations = [
 const livedPlaces = [
   "Saskatoon, Canada",
   "Victoria, Canada",
+  "Vancouver, Canada",
   "Macau, China",
   "Ankara, Turkey",
   "Kalkan, Turkey",
@@ -89,7 +89,11 @@ const MapLibreComponent = () => {
   }, []);
 
   return (
-    <section className="bg-gray-100 py-12 px-4 sm:px-8 lg:px-16 shadow-lg rounded-lg">
+    <section
+      id="map"
+      className="bg-gray-100 py-16 px-4 sm:px-8 lg:px-16 shadow-lg rounded-lg"
+    >
+      <br />
       <h2 className="text-xl sm:text-3xl font-lexend font-extrabold text-center mb-12 text-gray-800">
         My Places
       </h2>

@@ -6,7 +6,7 @@ import hhlogo from "../assets/healy-hyper-smalllogo.png";
 import stacchainLogo from "../assets/stacchain-smalllogo.png";
 import {
   faBoltLightning,
-  faCodeFork,
+  // faCodeFork,
   faUserAstronaut,
 } from "@fortawesome/free-solid-svg-icons";
 

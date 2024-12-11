@@ -18,11 +18,9 @@ const Navbar = () => {
       }}
     >
       <div className="max-w-6xl mx-auto px-4">
-        {/* Reduced top/bottom padding on very small screens */}
         <div className="flex justify-between items-center py-2 sm:py-4 text-gray-800">
           {/* Logo */}
           <div className="font-bold font-lexend">
-            {/* Smaller text size for mobile view */}
             <a href="#bio" className="text-lg sm:hidden">
               <FontAwesomeIcon icon={faHeart} />
             </a>
@@ -38,6 +36,12 @@ const Navbar = () => {
               className="hover:text-gray-600 transition duration-200 border-b-2 border-transparent hover:border-gray-800"
             >
               Bio
+            </a>
+            <a
+              href="#map"
+              className="hover:text-gray-600 transition duration-200 border-b-2 border-transparent hover:border-gray-800"
+            >
+              Map
             </a>
             <a
               href="#photos"
@@ -65,6 +69,13 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               Bio
+            </a>
+            <a
+              href="#map"
+              className="hover:text-gray-600 transition duration-200 border-b-2 border-transparent hover:border-gray-800"
+              onClick={toggleMenu}
+            >
+              Map
             </a>
             <a
               href="#photos"
