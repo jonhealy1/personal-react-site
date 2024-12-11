@@ -83,7 +83,7 @@ const Bio = () => {
               icon={faGithub}
               className="text-gray-800 text-xl"
             />
-            <span className="text-gray-800 font-semibold">GitHub</span>
+            <span className="text-gray-800 font-semibold">jonhealy1</span>
           </a>
           <a
             href="https://stacchain.github.io"

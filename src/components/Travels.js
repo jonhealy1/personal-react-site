@@ -81,7 +81,7 @@ const Travels = () => {
   }, [selectedIndex, handleNext, handlePrevious]);
 
   return (
-    <div className="w-full px-8 py-12 bg-gradient-to-b from-gray-200 via-white to-gray-100">
+    <div className="w-full px-8 py-24 bg-gradient-to-b from-gray-200 via-white to-gray-100">
       <h2 className="text-2xl sm:text-3xl font-lexend font-extrabold text-center mb-12 text-gray-800">
         Travel Photos
       </h2>
