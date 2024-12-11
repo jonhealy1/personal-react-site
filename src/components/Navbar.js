@@ -14,7 +14,7 @@ const Navbar = () => {
       className="w-full fixed top-0 z-50 shadow-lg"
       style={{
         background:
-          "linear-gradient(to right, rgba(156, 163, 175, 0.5), rgba(209, 213, 219, 0.5))",
+          "linear-gradient(to right, rgba(156, 163, 175, 0.6), rgba(209, 213, 219, 0.6))",
       }}
     >
       <div className="max-w-6xl mx-auto px-4">
