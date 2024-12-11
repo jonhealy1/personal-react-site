@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         rubik: ["'Rubik Mono One'", "sans-serif"],
-        lexend: ["'Lexend Zetta'", "sans-serif"],
+        lexend: ["'Lexend Peta'", "sans-serif"],
       },
     },
   },
