@@ -6,12 +6,12 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 
 const Header = () => {
   return (
-    <header className="relative w-screen h-[60vh] overflow-hidden bg-gray-900">
+    <header className="relative w-screen h-[60vh] sm:h-[70vh] md:h-[80vh] min-h-[300px] overflow-hidden bg-gray-900">
       {/* Background Image */}
       <img
         src={image}
         alt="Athens City"
-        className="absolute inset-0 w-full h-full object-cover opacity-70"
+        className="absolute inset-0 w-full h-full object-cover object-top opacity-70"
       />
       {/* Overlay Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-gray-100 px-4">
