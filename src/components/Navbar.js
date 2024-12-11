@@ -18,14 +18,14 @@ const Navbar = () => {
       }}
     >
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center py-4 text-gray-800">
+        {/* Reduced top/bottom padding on very small screens */}
+        <div className="flex justify-between items-center py-2 sm:py-4 text-gray-800">
           {/* Logo */}
           <div className="font-bold font-lexend">
-            {/* Show heart on small screens */}
-            <a href="#bio" className="text-xl sm:hidden">
+            {/* Smaller text size for mobile view */}
+            <a href="#bio" className="text-lg sm:hidden">
               <FontAwesomeIcon icon={faHeart} />
             </a>
-            {/* Show full text on larger screens */}
             <a href="#bio" className="hidden sm:inline-block sm:text-xl">
               Welcome to my website
             </a>
