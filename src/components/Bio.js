@@ -4,16 +4,27 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import hhlogo from "../assets/healy-hyper-smalllogo.png";
 import stacchainLogo from "../assets/stacchain-smalllogo.png";
-import { faBoltLightning, faCodeFork } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBoltLightning,
+  faCodeFork,
+  faUserAstronaut,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Bio = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Left Column: Bio */}
       <div className="col-span-2">
-        <h2 className="font-lexend text-2xl sm:text-3xl font-extrabold text-gray-800 mb-4">
-          Hello. Nice to meet you!
-        </h2>
+        <div className="flex items-center gap-4 mb-4">
+          <h2 className="font-lexend text-2xl sm:text-3xl font-extrabold text-gray-800">
+            Hello. Nice to meet you!
+          </h2>
+          <FontAwesomeIcon
+            icon={faUserAstronaut}
+            className="text-gray-800 text-4xl"
+          />
+        </div>
+
         <p className="text-gray-700 text-lg leading-relaxed mb-4">
           My name is Jonathan Healy and I'm a software developer specializing in
           geospatial technologies and blockchain. I love being a dad, husband,
