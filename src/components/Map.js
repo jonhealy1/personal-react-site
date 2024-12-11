@@ -93,6 +93,7 @@ const MapLibreComponent = () => {
         markerEl.style.color = "black";
         markerEl.style.fontSize = "20px";
         markerEl.style.cursor = "pointer";
+        markerEl.style.zIndex = "10";
       } else {
         markerEl = document.createElement("div");
         markerEl.className = "custom-marker";
@@ -140,7 +141,7 @@ const MapLibreComponent = () => {
       ></div>
 
       {/* Legend Section */}
-      <div className="mt-4 flex justify-center space-x-8 text-gray-700 font-lexend">
+      <div className="mt-4 flex flex-wrap justify-center space-x-4 sm:space-x-8 text-gray-700 font-lexend text-sm sm:text-base">
         <div className="flex items-center space-x-2">
           <span
             className="inline-block w-4 h-4 rounded-full"
@@ -156,7 +157,9 @@ const MapLibreComponent = () => {
           <span>Places I Visited</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span style={{ color: "black", fontSize: "20px" }}>★</span>
+          <span style={{ color: "black", fontSize: "18px", lineHeight: "1" }}>
+            ★
+          </span>
           <span>Birthplace (Regina)</span>
         </div>
       </div>
