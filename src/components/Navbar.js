@@ -20,9 +20,15 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center py-4 text-gray-800">
           {/* Logo */}
-          <div className="sm:text-xl font-bold font-lexend">
-            <a href="#bio">Welcome to my website </a>
-            <FontAwesomeIcon icon={faHeart} />
+          <div className="font-bold font-lexend">
+            {/* Show heart on small screens */}
+            <a href="#bio" className="text-xl sm:hidden">
+              <FontAwesomeIcon icon={faHeart} />
+            </a>
+            {/* Show full text on larger screens */}
+            <a href="#bio" className="hidden sm:inline-block sm:text-xl">
+              Welcome to my website
+            </a>
           </div>
 
           {/* Desktop Links */}
