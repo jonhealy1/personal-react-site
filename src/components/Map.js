@@ -3,10 +3,22 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 const locations = [
-  { name: "Sofia, Bulgaria", coords: [23.3219, 42.6977] },
+  { name: "Ankara, Turkey", coords: [32.8597, 39.9208] },
   { name: "Athens, Greece", coords: [23.7275, 37.9838] },
+  { name: "Bangkok, Thailand", coords: [100.5018, 13.7563] },
+  { name: "Calgary, Canada", coords: [-114.0719, 51.0447] },
+  { name: "Cartagena, Colombia", coords: [-75.4794, 10.391] },
   { name: "Corfu Island, Greece", coords: [19.9211, 39.6243] },
   { name: "Fethiye, Turkey", coords: [29.1168, 36.6219] },
+  { name: "Konya, Turkey", coords: [32.4845, 37.8746] },
+  { name: "Langkawi, Malaysia", coords: [99.7985, 6.3628] },
+  { name: "Macau, China", coords: [113.5439, 22.1987] },
+  { name: "Phuket, Thailand", coords: [98.3394, 7.8804] },
+  { name: "Saskatoon, Canada", coords: [-106.6345, 52.1332] },
+  { name: "Sofia, Bulgaria", coords: [23.3219, 42.6977] },
+  { name: "Toronto, Canada", coords: [-79.3832, 43.6532] },
+  { name: "Vancouver, Canada", coords: [-123.1216, 49.2827] },
+  { name: "Victoria, Canada", coords: [-123.3656, 48.4284] },
 ];
 
 const MapLibreComponent = () => {
