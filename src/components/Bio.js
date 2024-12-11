@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import hhlogo from "../assets/healy-hyper-smalllogo.png";
-import stacchainLogo from "../assets/stacchain-smalllogo.jpg";
-import { faBoltLightning } from "@fortawesome/free-solid-svg-icons";
+import stacchainLogo from "../assets/stacchain-smalllogo.png";
+import { faBoltLightning, faCodeFork } from "@fortawesome/free-solid-svg-icons";
 
 const Bio = () => {
   return (
@@ -97,6 +97,20 @@ const Bio = () => {
             />
             <span className="text-gray-800 font-semibold">stacchain</span>
           </a>
+          <a
+            href="https://github.com/Healy-Hyperspatial"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg shadow hover:shadow-md hover:bg-blue-100 transition"
+          >
+            <FontAwesomeIcon
+              icon={faCodeFork}
+              className="text-gray-800 text-xl"
+            />
+            <span className="text-gray-800 font-semibold">
+              Healy Hyperspatial
+            </span>
+          </a>
         </div>
       </div>
 
@@ -111,7 +125,7 @@ const Bio = () => {
           <img
             src={stacchainLogo}
             alt="Stacchain Logo"
-            className="h-28 max-w-full w-auto hover:scale-110 transition-transform"
+            className="h-28 sm:h-32 md:h-40 max-w-full w-auto hover:scale-110 transition-transform"
           />
         </a>
         <a
@@ -123,7 +137,7 @@ const Bio = () => {
           <img
             src={hhlogo}
             alt="Healy Hyperspatial Logo"
-            className="h-28 max-w-full w-auto hover:scale-110 transition-transform"
+            className="h-28 sm:h-32 md:h-40 max-w-full w-auto hover:scale-110 transition-transform"
           />
         </a>
       </div>
