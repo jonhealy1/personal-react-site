@@ -73,10 +73,10 @@ const MapLibreComponent = () => {
 
   return (
     <section className="bg-gray-100 py-12 px-4 sm:px-8 lg:px-16 shadow-lg rounded-lg">
-      <h2 className="text-2xl sm:text-3xl font-lexend font-extrabold text-center mb-12 text-gray-800">
+      <h2 className="text-xl sm:text-3xl font-lexend font-extrabold text-center mb-12 text-gray-800">
         My Places
       </h2>
-      <p className="text-lg text-center text-gray-600 mb-6">
+      <p className="sm:text-lg text-center text-gray-600 mb-6">
         Explore the places I’ve traveled to around the world.
       </p>
       <div
