@@ -3,6 +3,8 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 const locations = [
+  { name: "Alanya, Turkey", coords: [31.9992, 36.5438] },
+  { name: "Antalya, Turkey", coords: [30.7133, 36.8969] },
   { name: "Ankara, Turkey", coords: [32.8597, 39.9208] },
   { name: "Athens, Greece", coords: [23.7275, 37.9838] },
   { name: "Bangkok, Thailand", coords: [100.5018, 13.7563] },
