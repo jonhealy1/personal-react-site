@@ -25,47 +25,70 @@ const MapLibreComponent = () => {
   const mapContainerRef = useRef(null);
 
   useEffect(() => {
-    // Initialize the map
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
       style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
-      center: [23.7275, 37.9838], // Centered near Athens
-      zoom: 4,
+      zoom: 1,
     });
 
-    // Add custom markers for each location
+    const bounds = locations.reduce(
+      (acc, location) => {
+        const [lng, lat] = location.coords;
+        acc[0][0] = Math.min(acc[0][0], lng);
+        acc[0][1] = Math.min(acc[0][1], lat);
+        acc[1][0] = Math.max(acc[1][0], lng);
+        acc[1][1] = Math.max(acc[1][1], lat);
+        return acc;
+      },
+      [
+        [Infinity, Infinity],
+        [-Infinity, -Infinity],
+      ]
+    );
+
+    map.fitBounds(bounds, { padding: 50 });
+
     locations.forEach((location) => {
-      // Create custom marker element
       const markerEl = document.createElement("div");
       markerEl.className = "custom-marker";
-      markerEl.style.width = "20px";
-      markerEl.style.height = "20px";
+      markerEl.style.width = "14px";
+      markerEl.style.height = "14px";
       markerEl.style.backgroundColor = "#007BFF";
       markerEl.style.borderRadius = "50%";
-      markerEl.style.border = "2px solid white";
-      markerEl.style.boxShadow = "0 2px 6px rgba(0, 0, 0, 0.2)";
+      markerEl.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+      markerEl.style.cursor = "pointer";
 
-      // Add marker to the map
       new maplibregl.Marker({ element: markerEl })
         .setLngLat(location.coords)
         .setPopup(
           new maplibregl.Popup({ offset: 25 }).setHTML(
             `<h3>${location.name}</h3>`
           )
-        ) // Optional popup
+        )
         .addTo(map);
     });
 
-    // Cleanup on unmount
     return () => map.remove();
   }, []);
 
   return (
-    <div
-      ref={mapContainerRef}
-      className="w-full h-screen"
-      style={{ height: "400px" }}
-    ></div>
+    <section className="bg-gray-100 py-12 px-4 sm:px-8 lg:px-16 shadow-lg rounded-lg">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 text-gray-800">
+        My Places
+      </h2>
+      <p className="text-lg text-center text-gray-600 mb-6">
+        Explore the places I’ve traveled to around the world.
+      </p>
+      <div
+        ref={mapContainerRef}
+        className="w-full rounded-lg shadow-lg"
+        style={{
+          height: "50vh", // Height relative to viewport
+          maxHeight: "500px", // Maximum height
+          minHeight: "300px", // Minimum height for very narrow screens
+        }}
+      ></div>
+    </section>
   );
 };
 
