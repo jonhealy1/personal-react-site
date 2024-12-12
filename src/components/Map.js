@@ -60,7 +60,7 @@ const locations = [
     daysSpent: 7,
   },
   { name: "Sarandë, Albania", coords: [19.9836, 39.8757], daysSpent: 4 },
-  { name: "Saskatoon, Canada", coords: [-106.6345, 52.1332], weeksSpent: 260 },
+  { name: "Saskatoon, Canada", coords: [-106.6345, 52.1332], weeksSpent: 450 },
   { name: "Sofia, Bulgaria", coords: [23.3219, 42.6977], daysSpent: 4 },
   { name: "Toronto, Canada", coords: [-79.3832, 43.6532], daysSpent: 22 },
   { name: "Vancouver, Canada", coords: [-123.1216, 49.2827], weeksSpent: 520 },
@@ -72,17 +72,17 @@ const MapLibreComponent = () => {
   const mapContainerRef = useRef(null);
 
   const calculateVisitedCircleSize = (days) => {
-    const maxDays = 50; // Max days for visited
-    return Math.min(5 + (days / maxDays) * 16, 10); // Circle size between 4 and 20px
+    const maxDays = 90; // Max days for visited
+    return Math.min(7 + (days / maxDays) * 16, 12); // Circle size between 4 and 20px
   };
 
   const calculateLivedCircleSize = (weeks) => {
-    const maxWeeks = 260; // Max weeks for lived
-    return Math.min(10 + (weeks / maxWeeks) * 32, 18); // Circle size between 8 and 40px
+    const maxWeeks = 1040; // Max weeks for lived
+    return Math.min(12 + (weeks / maxWeeks) * 32, 15); // Circle size between 8 and 40px
   };
 
   const calculateVisitedGradientColor = (days) => {
-    const maxDays = 50;
+    const maxDays = 90;
     const normalized = Math.min(days / maxDays, 1);
 
     const r = Math.round(173 * (1 - normalized));
@@ -94,12 +94,12 @@ const MapLibreComponent = () => {
 
   const calculateLivedGradientColor = (weeks) => {
     const minWeeks = 52;
-    const maxWeeks = 260;
+    const maxWeeks = 1040;
     const normalized = Math.min((weeks - minWeeks) / (maxWeeks - minWeeks), 1);
 
-    const r = Math.round(50 + 155 * (1 - normalized));
-    const g = Math.round(205 + 50 * (1 - normalized));
-    const b = Math.round(50 * (1 - normalized));
+    const r = Math.round(0 + 50 * (1 - normalized));
+    const g = Math.round(100 + 105 * (1 - normalized));
+    const b = Math.round(0 + 50 * (1 - normalized));
 
     return `rgb(${r}, ${g}, ${b})`;
   };
