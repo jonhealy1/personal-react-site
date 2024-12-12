@@ -35,6 +35,8 @@ const locations = [
   { name: "Kelvington, Canada", coords: [-103.5217, 52.1635], yearsSpent: 1 },
   { name: "Konya, Turkey", coords: [32.4845, 37.8746], daysSpent: 5 },
   { name: "Kota Kinabalu, Malaysia", coords: [116.0724, 5.978], daysSpent: 7 },
+  { name: "Ladysmith, Canada", coords: [-123.8157, 48.9944], yearsSpent: 1 },
+  { name: "Lake Cowichan, Canada", coords: [-124.0563, 48.8261], daysSpent: 4 },
   { name: "Langkawi, Malaysia", coords: [99.7985, 6.3628], daysSpent: 12 },
   { name: "Lethbridge, Canada", coords: [-112.8418, 49.6935], daysSpent: 10 },
   { name: "Macau, China", coords: [113.5439, 22.1987], yearsSpent: 1.5 },
@@ -42,6 +44,7 @@ const locations = [
   { name: "Medicine Hat, Canada", coords: [-110.6766, 50.0405], daysSpent: 12 },
   { name: "Mexico City, Mexico", coords: [-99.1332, 19.4326], daysSpent: 3 },
   { name: "Moalboal, Philippines", coords: [123.3983, 9.9472], daysSpent: 8 },
+  { name: "Montezuma, Costa Rica", coords: [-85.0701, 9.6713], daysSpent: 4 },
   { name: "Montreal, Canada", coords: [-73.5673, 45.5017], yearsSpent: 1 },
   { name: "Moose Jaw, Canada", coords: [-105.5345, 50.3923], daysSpent: 15 },
   { name: "Nanaimo, Canada", coords: [-123.9401, 49.1659], yearsSpent: 3 },
@@ -52,6 +55,11 @@ const locations = [
   { name: "Panama City, Panama", coords: [-79.5167, 8.9833], daysSpent: 10 },
   { name: "Phoenix, USA", coords: [-112.074, 33.4484], daysSpent: 6 },
   { name: "Port Alberni, Canada", coords: [-124.8022, 49.2338], daysSpent: 1 },
+  {
+    name: "Port Coquitlam, Canada",
+    coords: [-122.7787, 49.2625],
+    yearsSpent: 4,
+  },
   { name: "Port Hardy, Canada", coords: [-127.492, 50.7197], daysSpent: 3 },
   { name: "Portland, USA", coords: [-122.6765, 45.5231], daysSpent: 2 },
   {
@@ -95,7 +103,7 @@ const locations = [
   { name: "Tofino, Canada", coords: [-125.8942, 49.1529], daysSpent: 20 },
   { name: "Toronto, Canada", coords: [-79.3832, 43.6532], daysSpent: 22 },
   { name: "Tulum, Mexico", coords: [-87.4667, 20.2117], daysSpent: 9 },
-  { name: "Vancouver, Canada", coords: [-123.1216, 49.2827], yearsSpent: 10 },
+  { name: "Vancouver, Canada", coords: [-123.1216, 49.2827], yearsSpent: 6 },
   { name: "Vernon, Canada", coords: [-119.271, 50.267], daysSpent: 4 },
   { name: "Victoria, Canada", coords: [-123.3656, 48.4284], yearsSpent: 5 },
   { name: "Winnipeg, Canada", coords: [-97.1375, 49.8951], daysSpent: 5 },
@@ -106,9 +114,9 @@ const MapLibreComponent = () => {
   const mapContainerRef = useRef(null);
 
   const calculateVisitedCircleSize = (days) => {
-    const maxDays = 50; // Max days for visited
+    const maxDays = 60; // Max days for visited
     const baseSize = window.innerWidth < 768 ? 9 : 11; // Smaller base for small screens
-    const maxSize = window.innerWidth < 768 ? 14 : 20; // Smaller max size for small screens
+    const maxSize = window.innerWidth < 768 ? 14 : 19; // Smaller max size for small screens
     return Math.min(
       baseSize + (days / maxDays) * (maxSize - baseSize),
       maxSize
@@ -116,9 +124,9 @@ const MapLibreComponent = () => {
   };
 
   const calculateLivedCircleSize = (years) => {
-    const maxYears = 12; // Example maximum years for scaling
-    const baseSize = window.innerWidth < 768 ? 12 : 14; // Smaller base for small screens
-    const maxSize = window.innerWidth < 768 ? 25 : 40; // Smaller max size for small screens
+    const maxYears = 8; // Example maximum years for scaling
+    const baseSize = window.innerWidth < 768 ? 13 : 14; // Smaller base for small screens
+    const maxSize = window.innerWidth < 768 ? 28 : 29; // Smaller max size for small screens
     return Math.min(
       baseSize + (years / maxYears) * (maxSize - baseSize),
       maxSize
