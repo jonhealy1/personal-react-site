@@ -73,8 +73,8 @@ const MapLibreComponent = () => {
 
   const calculateVisitedCircleSize = (days) => {
     const maxDays = 90; // Max days for visited
-    const baseSize = window.innerWidth < 768 ? 4 : 7; // Smaller base for small screens
-    const maxSize = window.innerWidth < 768 ? 10 : 15; // Smaller max size for small screens
+    const baseSize = window.innerWidth < 768 ? 7 : 10; // Smaller base for small screens
+    const maxSize = window.innerWidth < 768 ? 14 : 20; // Smaller max size for small screens
     return Math.min(
       baseSize + (days / maxDays) * (maxSize - baseSize),
       maxSize
@@ -83,7 +83,7 @@ const MapLibreComponent = () => {
 
   const calculateLivedCircleSize = (weeks) => {
     const maxWeeks = 1040; // Max weeks for lived
-    const baseSize = window.innerWidth < 768 ? 9 : 12; // Smaller base for small screens
+    const baseSize = window.innerWidth < 768 ? 11 : 13; // Smaller base for small screens
     const maxSize = window.innerWidth < 768 ? 25 : 40; // Smaller max size for small screens
     return Math.min(
       baseSize + (weeks / maxWeeks) * (maxSize - baseSize),
@@ -164,14 +164,21 @@ const MapLibreComponent = () => {
         .setLngLat(location.coords)
         .setPopup(
           new maplibregl.Popup({ offset: 25 }).setHTML(
-            `<h3>${location.name}</h3>
-             ${
-               location.daysSpent !== undefined
-                 ? `<p>Days Spent: ${location.daysSpent}</p>`
-                 : `<p>Weeks Spent: ${location.weeksSpent}</p>`
-             }`
+            `
+              <div class="bg-white rounded-lg shadow-lg p-2 max-w-xs text-gray-500">
+                <h3 class="mb-2 text-sm sm:text-md font-bold">${
+                  location.name
+                }</h3>
+                ${
+                  location.daysSpent !== undefined
+                    ? `<p class="text-xs sm:text-sm">📅 Days Spent: <strong>${location.daysSpent}</strong></p>`
+                    : `<p class="text-xs sm:text-sm">🗓️ Weeks Spent: <strong>${location.weeksSpent}</strong></p>`
+                }
+              </div>
+            `
           )
         )
+
         .addTo(map);
     });
 
