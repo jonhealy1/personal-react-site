@@ -116,7 +116,7 @@ const MapLibreComponent = () => {
   };
 
   const calculateLivedCircleSize = (years) => {
-    const maxYears = 20; // Example maximum years for scaling
+    const maxYears = 12; // Example maximum years for scaling
     const baseSize = window.innerWidth < 768 ? 12 : 14; // Smaller base for small screens
     const maxSize = window.innerWidth < 768 ? 25 : 40; // Smaller max size for small screens
     return Math.min(
@@ -126,7 +126,7 @@ const MapLibreComponent = () => {
   };
 
   const calculateVisitedGradientColor = (days) => {
-    const maxDays = 60;
+    const maxDays = 50;
     const normalized = Math.min(days / maxDays, 1);
 
     const r = Math.round(150 * (1 - normalized)); // Reduced from 173
@@ -138,7 +138,7 @@ const MapLibreComponent = () => {
 
   const calculateLivedGradientColor = (years) => {
     const minYears = 1;
-    const maxYears = 20;
+    const maxYears = 12;
     const normalized = Math.min((years - minYears) / (maxYears - minYears), 1);
 
     const r = Math.round(0 + 50 * (1 - normalized));
