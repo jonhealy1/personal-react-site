@@ -14,15 +14,19 @@ const Navbar = () => {
       className="w-full fixed top-0 z-50 shadow-lg"
       style={{
         background:
-          "linear-gradient(to right, rgba(156, 163, 175, 0.5), rgba(209, 213, 219, 0.5))",
+          "linear-gradient(to right, rgba(156, 163, 175, 0.6), rgba(209, 213, 219, 0.6))",
       }}
     >
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center py-4 text-gray-800">
+        <div className="flex justify-between items-center py-2 sm:py-4 text-gray-800">
           {/* Logo */}
-          <div className="sm:text-xl font-bold font-lexend">
-            <a href="#bio">Welcome to my website </a>
-            <FontAwesomeIcon icon={faHeart} />
+          <div className="font-bold font-lexend">
+            <a href="#bio" className="text-lg sm:hidden">
+              <FontAwesomeIcon icon={faHeart} />
+            </a>
+            <a href="#bio" className="hidden sm:inline-block sm:text-xl">
+              Welcome to my website
+            </a>
           </div>
 
           {/* Desktop Links */}
@@ -32,6 +36,12 @@ const Navbar = () => {
               className="hover:text-gray-600 transition duration-200 border-b-2 border-transparent hover:border-gray-800"
             >
               Bio
+            </a>
+            <a
+              href="#map"
+              className="hover:text-gray-600 transition duration-200 border-b-2 border-transparent hover:border-gray-800"
+            >
+              Map
             </a>
             <a
               href="#photos"
@@ -59,6 +69,13 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               Bio
+            </a>
+            <a
+              href="#map"
+              className="hover:text-gray-600 transition duration-200 border-b-2 border-transparent hover:border-gray-800"
+              onClick={toggleMenu}
+            >
+              Map
             </a>
             <a
               href="#photos"

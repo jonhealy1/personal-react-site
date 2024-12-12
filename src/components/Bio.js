@@ -6,7 +6,7 @@ import hhlogo from "../assets/healy-hyper-smalllogo.png";
 import stacchainLogo from "../assets/stacchain-smalllogo.png";
 import {
   faBoltLightning,
-  faCodeFork,
+  // faCodeFork,
   faUserAstronaut,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -16,7 +16,7 @@ const Bio = () => {
       {/* Left Column: Bio */}
       <div className="col-span-2">
         <div className="flex items-center gap-4 mb-4">
-          <h2 className="font-lexend text-2xl sm:text-3xl font-extrabold text-gray-800">
+          <h2 className="font-lexend text-xl sm:text-3xl font-extrabold text-gray-800">
             Hello. Nice to meet you!
           </h2>
           <FontAwesomeIcon
@@ -25,7 +25,7 @@ const Bio = () => {
           />
         </div>
 
-        <p className="text-gray-700 text-lg leading-relaxed mb-4">
+        <p className="text-gray-700 sm:text-lg leading-relaxed mb-4">
           My name is Jonathan Healy and I'm a software developer specializing in
           geospatial technologies and blockchain. I love being a dad, husband,
           and traveling. I'm currently working on{" "}
@@ -48,7 +48,7 @@ const Bio = () => {
           </a>
           .
         </p>
-        <p className="text-gray-700 text-lg leading-relaxed mb-4">
+        <p className="text-gray-700 sm:text-lg leading-relaxed mb-4">
           Recognizing a need for honest and cost-effective software development
           services, I started{" "}
           <a
@@ -62,7 +62,7 @@ const Bio = () => {
           . We focus on providing technically sound and innovative solutions for
           a wide range of backend and frontend software development needs.
         </p>
-        <p className="text-gray-700 text-lg mb-6">
+        <p className="text-gray-700 sm:text-lg mb-6">
           Check out my work on{" "}
           <a
             href="https://github.com/jonhealy1"
@@ -88,11 +88,11 @@ const Bio = () => {
             href="https://github.com/jonhealy1"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg shadow hover:shadow-md hover:bg-blue-100 transition"
+            className="text-sm sm:text-md flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg shadow hover:shadow-md hover:bg-blue-100 transition"
           >
             <FontAwesomeIcon
               icon={faGithub}
-              className="text-gray-800 text-xl"
+              className="text-gray-800 sm:text-xl"
             />
             <span className="text-gray-800 font-semibold">jonhealy1</span>
           </a>
@@ -100,28 +100,28 @@ const Bio = () => {
             href="https://stacchain.github.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg shadow hover:shadow-md hover:bg-blue-100 transition"
+            className="text-sm sm:text-md flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg shadow hover:shadow-md hover:bg-blue-100 transition"
           >
             <FontAwesomeIcon
               icon={faBoltLightning}
-              className="text-gray-800 text-xl"
+              className="text-gray-800 sm:text-xl"
             />
             <span className="text-gray-800 font-semibold">stacchain</span>
           </a>
-          <a
+          {/* <a
             href="https://github.com/Healy-Hyperspatial"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg shadow hover:shadow-md hover:bg-blue-100 transition"
+            className="text-sm sm:text-md flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg shadow hover:shadow-md hover:bg-blue-100 transition"
           >
             <FontAwesomeIcon
               icon={faCodeFork}
-              className="text-gray-800 text-xl"
+              className="text-gray-800 sm:text-xl"
             />
             <span className="text-gray-800 font-semibold">
               Healy Hyperspatial
             </span>
-          </a>
+          </a> */}
         </div>
       </div>
 
