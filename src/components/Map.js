@@ -73,12 +73,22 @@ const MapLibreComponent = () => {
 
   const calculateVisitedCircleSize = (days) => {
     const maxDays = 90; // Max days for visited
-    return Math.min(7 + (days / maxDays) * 16, 12); // Circle size between 4 and 20px
+    const baseSize = window.innerWidth < 768 ? 4 : 7; // Smaller base for small screens
+    const maxSize = window.innerWidth < 768 ? 10 : 15; // Smaller max size for small screens
+    return Math.min(
+      baseSize + (days / maxDays) * (maxSize - baseSize),
+      maxSize
+    );
   };
 
   const calculateLivedCircleSize = (weeks) => {
     const maxWeeks = 1040; // Max weeks for lived
-    return Math.min(12 + (weeks / maxWeeks) * 32, 15); // Circle size between 8 and 40px
+    const baseSize = window.innerWidth < 768 ? 9 : 12; // Smaller base for small screens
+    const maxSize = window.innerWidth < 768 ? 25 : 40; // Smaller max size for small screens
+    return Math.min(
+      baseSize + (weeks / maxWeeks) * (maxSize - baseSize),
+      maxSize
+    );
   };
 
   const calculateVisitedGradientColor = (days) => {
