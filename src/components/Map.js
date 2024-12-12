@@ -71,8 +71,18 @@ const locations = [
 const MapLibreComponent = () => {
   const mapContainerRef = useRef(null);
 
-  const calculateVisitedGradientColor = (days) => {
+  const calculateVisitedCircleSize = (days) => {
     const maxDays = 50; // Max days for visited
+    return Math.min(5 + (days / maxDays) * 16, 10); // Circle size between 4 and 20px
+  };
+
+  const calculateLivedCircleSize = (weeks) => {
+    const maxWeeks = 260; // Max weeks for lived
+    return Math.min(10 + (weeks / maxWeeks) * 32, 18); // Circle size between 8 and 40px
+  };
+
+  const calculateVisitedGradientColor = (days) => {
+    const maxDays = 50;
     const normalized = Math.min(days / maxDays, 1);
 
     const r = Math.round(173 * (1 - normalized));
@@ -119,20 +129,23 @@ const MapLibreComponent = () => {
     map.fitBounds(bounds, { padding: 50 });
 
     locations.forEach((location) => {
-      let gradientColor;
+      let circleSize, gradientColor;
 
       if (location.daysSpent !== undefined) {
+        circleSize = calculateVisitedCircleSize(location.daysSpent);
         gradientColor = calculateVisitedGradientColor(location.daysSpent);
       } else if (location.weeksSpent !== undefined) {
+        circleSize = calculateLivedCircleSize(location.weeksSpent);
         gradientColor = calculateLivedGradientColor(location.weeksSpent);
       } else {
+        circleSize = 8;
         gradientColor = "#CCCCCC";
       }
 
       const markerEl = document.createElement("div");
       markerEl.className = "custom-marker";
-      markerEl.style.width = "14px";
-      markerEl.style.height = "14px";
+      markerEl.style.width = `${circleSize}px`;
+      markerEl.style.height = `${circleSize}px`;
       markerEl.style.borderRadius = "50%";
       markerEl.style.cursor = "pointer";
       markerEl.style.backgroundColor = gradientColor;
