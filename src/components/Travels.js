@@ -119,29 +119,34 @@ const Travels = () => {
         Travel Photos
       </h2>
       <Swiper
-        slidesPerView={3} // Show 3 slides for the effect
-        centeredSlides={true} // Center the active slide
+        slidesPerView={3} // Default number of slides visible
+        centeredSlides={true}
         spaceBetween={30}
-        loop={true} // Enable looping
-        loopFillGroupWithBlank={true} // Ensures seamless wrapping
+        loop={true}
         navigation
         pagination={{ clickable: true }}
         effect="coverflow"
         coverflowEffect={{
-          rotate: 70, // Rotate adjacent slides
-          stretch: 50, // Adds spacing between slides
-          depth: 200, // Adds a 3D perspective
-          modifier: 1.5, // Amplifies the effect
-          slideShadows: true, // Adds shadows for depth
+          rotate: 70,
+          stretch: 50,
+          depth: 200,
+          modifier: 1.5,
+          slideShadows: true,
         }}
         modules={[EffectCoverflow, Navigation, Pagination]}
         className="mySwiper"
+        breakpoints={{
+          240: { slidesPerView: 1.5, spaceBetween: 10 }, // Phones in portrait mode
+          480: { slidesPerView: 2.5, spaceBetween: 15 }, // Larger phones
+          768: { slidesPerView: 2.5, spaceBetween: 20 }, // Tablets
+          1024: { slidesPerView: 3.5, spaceBetween: 30 }, // Desktops
+        }}
       >
         {places.map((place, index) => (
           <SwiperSlide
             key={index}
             className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
-            onClick={() => openModal(index)} // Open modal on click
+            onClick={() => openModal(index)}
           >
             <img
               src={place.image}
