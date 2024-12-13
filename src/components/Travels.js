@@ -4,19 +4,27 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
-import alanya from "../assets/alanya-castle-wall.jpg";
+import alanya from "../assets/travel/alanya-castle-wall.jpg";
+import alanya2 from "../assets/travel/alanya-lights-169.jpg";
 import athens from "../assets/athens-city-sea.jpg";
-import fetihye from "../assets/ghost-town-rainbow.jpg";
-import kas from "../assets/kas-street.jpg";
-import rhodes from "../assets/rhodes-windmills.jpg";
+import fetihye from "../assets/travel/ghost-town-rainbow.jpg";
+import kalkan from "../assets/travel/kalkan-harbor-43.jpg";
+import kaputas from "../assets/travel/kaputas-4.jpg";
+import kas from "../assets/travel/kas-street.jpg";
+import macau from "../assets/travel/macao-green-plants.jpg";
+import rhodes from "../assets/travel/rhodes-windmills.jpg";
 
 const places = [
   {
-    title: "Kas, Turkiye",
+    title: "Kalkan, Türkiye",
+    image: kalkan,
+  },
+  {
+    title: "Kaş, Türkiye",
     image: kas,
   },
   {
-    title: "Alanya, Turkiye",
+    title: "Alanya, Türkiye",
     image: alanya,
   },
   {
@@ -24,12 +32,24 @@ const places = [
     image: rhodes,
   },
   {
-    title: "Fethiye, Turkiye",
+    title: "Fethiye, Türkiye",
     image: fetihye,
   },
   {
     title: "Athens, Greece",
     image: athens,
+  },
+  {
+    title: "Macau SAR, China",
+    image: macau,
+  },
+  {
+    title: "Kaputaş, Türkiye",
+    image: kaputas,
+  },
+  {
+    title: "Alanya, Türkiye",
+    image: alanya2,
   },
 ];
 
