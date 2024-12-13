@@ -10,10 +10,13 @@ import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import alanya from "../assets/travel/alanya-castle-wall.jpg";
 import alanya2 from "../assets/travel/alanya-lights-169.jpg";
 import athens from "../assets/athens-city-sea.jpg";
+import cenang from "../assets/travel/cenang-sunset-916.jpg";
 import fetihye from "../assets/travel/ghost-town-rainbow.jpg";
 import kalkan from "../assets/travel/kalkan-harbor-43.jpg";
 import kaputas from "../assets/travel/kaputas-4.jpg";
+import kaputas2 from "../assets/travel/kaputas-flowers.jpg";
 import kas from "../assets/travel/kas-street.jpg";
+import kas2 from "../assets/travel/kas-harbor.jpg";
 import langkawi from "../assets/travel/langkawi-wfalls-12.jpg";
 import macau from "../assets/travel/macao-green-plants.jpg";
 import malta from "../assets/travel/gozo-gate-169.jpg";
@@ -29,6 +32,10 @@ const places = [
     image: langkawi,
   },
   {
+    title: "Kaş, Türkiye",
+    image: kas2,
+  },
+  {
     title: "Gozo, Malta",
     image: malta,
   },
@@ -41,8 +48,16 @@ const places = [
     image: alanya,
   },
   {
+    title: "Pantai Cenang, Langkawi",
+    image: cenang,
+  },
+  {
     title: "Rhodes Island, Greece",
     image: rhodes,
+  },
+  {
+    title: "Kaputaş, Türkiye",
+    image: kaputas2,
   },
   {
     title: "Fethiye, Türkiye",
