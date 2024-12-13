@@ -3,33 +3,81 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Navigation, Pagination } from "swiper/modules";
-import alanya from "../assets/alanya-castle-wall.jpg";
+import "swiper/css/effect-coverflow";
+import "swiper/css/effect-fade";
+import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+// import { Navigation, Pagination } from "swiper/modules";
+import alanya from "../assets/travel/alanya-castle-wall.jpg";
+import alanya2 from "../assets/travel/alanya-lights-169.jpg";
 import athens from "../assets/athens-city-sea.jpg";
-import fetihye from "../assets/ghost-town-rainbow.jpg";
-import kas from "../assets/kas-street.jpg";
-import rhodes from "../assets/rhodes-windmills.jpg";
+import cenang from "../assets/travel/cenang-sunset-916.jpg";
+import fetihye from "../assets/travel/ghost-town-rainbow.jpg";
+import kalkan from "../assets/travel/kalkan-harbor-43.jpg";
+import kaputas from "../assets/travel/kaputas-4.jpg";
+import kaputas2 from "../assets/travel/kaputas-flowers.jpg";
+import kas from "../assets/travel/kas-street.jpg";
+import kas2 from "../assets/travel/kas-harbor.jpg";
+import langkawi from "../assets/travel/langkawi-wfalls-12.jpg";
+import macau from "../assets/travel/macao-green-plants.jpg";
+import malta from "../assets/travel/gozo-gate-169.jpg";
+import rhodes from "../assets/travel/rhodes-windmills.jpg";
 
 const places = [
   {
-    title: "Kas, Turkiye",
+    title: "Kalkan, Türkiye",
+    image: kalkan,
+  },
+  {
+    title: "Langkawi, Malaysia",
+    image: langkawi,
+  },
+  {
+    title: "Kaş, Türkiye",
+    image: kas2,
+  },
+  {
+    title: "Gozo, Malta",
+    image: malta,
+  },
+  {
+    title: "Kaş, Türkiye",
     image: kas,
   },
   {
-    title: "Alanya, Turkiye",
+    title: "Alanya, Türkiye",
     image: alanya,
+  },
+  {
+    title: "Pantai Cenang, Langkawi",
+    image: cenang,
   },
   {
     title: "Rhodes Island, Greece",
     image: rhodes,
   },
   {
-    title: "Fethiye, Turkiye",
+    title: "Kaputaş, Türkiye",
+    image: kaputas2,
+  },
+  {
+    title: "Fethiye, Türkiye",
     image: fetihye,
   },
   {
     title: "Athens, Greece",
     image: athens,
+  },
+  {
+    title: "Macau SAR, China",
+    image: macau,
+  },
+  {
+    title: "Kaputaş, Türkiye",
+    image: kaputas,
+  },
+  {
+    title: "Alanya, Türkiye",
+    image: alanya2,
   },
 ];
 
@@ -86,37 +134,48 @@ const Travels = () => {
         Travel Photos
       </h2>
       <Swiper
-        slidesPerView={1}
-        breakpoints={{
-          640: { slidesPerView: 1, spaceBetween: 20 },
-          1024: { slidesPerView: 2, spaceBetween: 30 },
-        }}
+        slidesPerView={3} // Default number of slides visible
+        centeredSlides={true}
+        spaceBetween={30}
+        loop={true}
         navigation
         pagination={{ clickable: true }}
-        modules={[Navigation, Pagination]}
+        effect="coverflow"
+        coverflowEffect={{
+          rotate: 70,
+          stretch: 50,
+          depth: 200,
+          modifier: 1.5,
+          slideShadows: true,
+        }}
+        modules={[EffectCoverflow, Navigation, Pagination]}
         className="mySwiper"
+        breakpoints={{
+          240: { slidesPerView: 1.5, spaceBetween: 10 }, // Phones in portrait mode
+          480: { slidesPerView: 2.5, spaceBetween: 15 }, // Larger phones
+          768: { slidesPerView: 2.5, spaceBetween: 20 }, // Tablets
+          1024: { slidesPerView: 3.5, spaceBetween: 30 }, // Desktops
+        }}
       >
         {places.map((place, index) => (
           <SwiperSlide
             key={index}
-            className="group flex flex-col items-center cursor-pointer"
+            className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
             onClick={() => openModal(index)}
           >
-            <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform transform group-hover:scale-105 group-hover:rotate-1">
-              <img
-                src={place.image}
-                alt={place.title}
-                className="w-full h-96 object-cover"
-              />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <p className="text-lg font-medium text-white">{place.title}</p>
-              </div>
+            <img
+              src={place.image}
+              alt={place.title}
+              className="w-full h-[50vh] object-cover rounded-lg"
+            />
+            <div className="absolute bottom-4 left-4 bg-black/70 text-white px-4 py-1 rounded-md text-sm sm:text-base">
+              {place.title}
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Modal for Full Image */}
+      {/* Modal for Enlarged Photo */}
       {selectedIndex !== null && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
