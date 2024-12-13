@@ -3,7 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css/effect-coverflow";
+import "swiper/css/effect-fade";
+import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+// import { Navigation, Pagination } from "swiper/modules";
 import alanya from "../assets/travel/alanya-castle-wall.jpg";
 import alanya2 from "../assets/travel/alanya-lights-169.jpg";
 import athens from "../assets/athens-city-sea.jpg";
@@ -11,13 +14,23 @@ import fetihye from "../assets/travel/ghost-town-rainbow.jpg";
 import kalkan from "../assets/travel/kalkan-harbor-43.jpg";
 import kaputas from "../assets/travel/kaputas-4.jpg";
 import kas from "../assets/travel/kas-street.jpg";
+import langkawi from "../assets/travel/langkawi-wfalls-12.jpg";
 import macau from "../assets/travel/macao-green-plants.jpg";
+import malta from "../assets/travel/gozo-gate-169.jpg";
 import rhodes from "../assets/travel/rhodes-windmills.jpg";
 
 const places = [
   {
     title: "Kalkan, Türkiye",
     image: kalkan,
+  },
+  {
+    title: "Langkawi, Malaysia",
+    image: langkawi,
+  },
+  {
+    title: "Gozo, Malta",
+    image: malta,
   },
   {
     title: "Kaş, Türkiye",
@@ -106,37 +119,43 @@ const Travels = () => {
         Travel Photos
       </h2>
       <Swiper
-        slidesPerView={1}
-        breakpoints={{
-          640: { slidesPerView: 1, spaceBetween: 20 },
-          1024: { slidesPerView: 2, spaceBetween: 30 },
-        }}
+        slidesPerView={3} // Show 3 slides for the effect
+        centeredSlides={true} // Center the active slide
+        spaceBetween={30}
+        loop={true} // Enable looping
+        loopFillGroupWithBlank={true} // Ensures seamless wrapping
         navigation
         pagination={{ clickable: true }}
-        modules={[Navigation, Pagination]}
+        effect="coverflow"
+        coverflowEffect={{
+          rotate: 70, // Rotate adjacent slides
+          stretch: 50, // Adds spacing between slides
+          depth: 200, // Adds a 3D perspective
+          modifier: 1.5, // Amplifies the effect
+          slideShadows: true, // Adds shadows for depth
+        }}
+        modules={[EffectCoverflow, Navigation, Pagination]}
         className="mySwiper"
       >
         {places.map((place, index) => (
           <SwiperSlide
             key={index}
-            className="group flex flex-col items-center cursor-pointer"
-            onClick={() => openModal(index)}
+            className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
+            onClick={() => openModal(index)} // Open modal on click
           >
-            <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform transform group-hover:scale-105 group-hover:rotate-1">
-              <img
-                src={place.image}
-                alt={place.title}
-                className="w-full h-96 object-cover"
-              />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <p className="text-lg font-medium text-white">{place.title}</p>
-              </div>
+            <img
+              src={place.image}
+              alt={place.title}
+              className="w-full h-[50vh] object-cover rounded-lg"
+            />
+            <div className="absolute bottom-4 left-4 bg-black/70 text-white px-4 py-1 rounded-md text-sm sm:text-base">
+              {place.title}
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Modal for Full Image */}
+      {/* Modal for Enlarged Photo */}
       {selectedIndex !== null && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
