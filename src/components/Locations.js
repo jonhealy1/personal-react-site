@@ -4,7 +4,7 @@ const locations = [
   { name: "Ankara, Turkey", coords: [32.8597, 39.9208], yearsSpent: 2 },
   { name: "Athens, Greece", coords: [23.7275, 37.9838], daysSpent: 6 },
   { name: "Banff, Canada", coords: [-115.5708, 51.1784], daysSpent: 25 },
-  { name: "Bangkok, Thailand", coords: [100.5018, 13.7563], daysSpent: 2 },
+  { name: "Bangkok, Thailand", coords: [100.5018, 13.7563], daysSpent: 5 },
   { name: "Bocas del Toro, Panama", coords: [-82.2516, 9.3339], daysSpent: 10 },
   {
     name: "Cabo San Lucas, Mexico",
@@ -15,6 +15,7 @@ const locations = [
   { name: "Cancún, Mexico", coords: [-86.8475, 21.1619], daysSpent: 1 },
   { name: "Cappadocia, Turkey", coords: [34.8467, 38.6431], daysSpent: 7 },
   { name: "Cartagena, Colombia", coords: [-75.4794, 10.391], daysSpent: 30 },
+  { name: "Chiang Mai, Thailand", coords: [98.9817, 18.7061], daysSpent: 3 },
   { name: "Corfu Island, Greece", coords: [19.9211, 39.6243], daysSpent: 5 },
   { name: "Fethiye, Turkey", coords: [29.1168, 36.6219], daysSpent: 3 },
   {
@@ -27,6 +28,7 @@ const locations = [
   { name: "Hong Kong, China", coords: [114.1694, 22.3193], daysSpent: 3 },
   { name: "Istanbul, Turkey", coords: [28.9784, 41.0082], daysSpent: 6 },
   { name: "Izmir, Turkey", coords: [27.1428, 38.4237], daysSpent: 5 },
+  { naem: "Jaco, Costa Rica", coords: [-84.6266, 9.6167], daysSpent: 3 },
   { name: "Kalkan, Turkey", coords: [29.4183, 36.2641], daysSpent: 90 },
   { name: "Kelvington, Canada", coords: [-103.5217, 52.1635], yearsSpent: 1 },
   { name: "Konya, Turkey", coords: [32.4845, 37.8746], daysSpent: 5 },
@@ -70,6 +72,7 @@ const locations = [
     coords: [-105.2374, 20.6534],
     daysSpent: 15,
   },
+  { name: "Radville, Canada", coords: [-104.294, 49.312], daysSpent: 15 },
   { name: "Regina, Canada", coords: [-104.6189, 50.4452], yearsSpent: 7 },
   { name: "Rhodes Island, Greece", coords: [28.2282, 36.4349], daysSpent: 14 },
   {
