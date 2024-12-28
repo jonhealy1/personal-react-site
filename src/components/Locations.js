@@ -31,6 +31,7 @@ const locations = [
   { naem: "Jaco, Costa Rica", coords: [-84.6266, 9.6167], daysSpent: 3 },
   { name: "Kalkan, Turkey", coords: [29.4183, 36.2641], daysSpent: 90 },
   { name: "Kelvington, Canada", coords: [-103.5217, 52.1635], yearsSpent: 1 },
+  { name: "Koh Tao, Thailand", coords: [99.8295, 10.0963], daysSpent: 7 },
   { name: "Konya, Turkey", coords: [32.4845, 37.8746], daysSpent: 5 },
   { name: "Kota Kinabalu, Malaysia", coords: [116.0724, 5.978], daysSpent: 7 },
   { name: "Kuala Lumpur, Malaysia", coords: [101.6869, 3.139], daysSpent: 2 },
